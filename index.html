@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#170d20">
+<meta name="description" content="সাদিয়ার জন্য সাকিবের হৃদয় থেকে লেখা একটি ভালোবাসার পত্র।">
+<title>আমার হৃদয়ের সুলতানা, সাদিয়া ❤️</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali:wght@400;500;600;700&family=Tiro+Bangla:ital@0;1&display=swap');
+:root{--night:#170d20;--plum:#29132f;--rose:#e8a6b7;--gold:#e8ca8b;--cream:#fff4e8;--muted:#d9bdc8;--glass:rgba(255,245,239,.075)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--night);color:var(--cream);font-family:"Noto Serif Bengali",serif;overflow-x:hidden}
+button{font:inherit}
+#sky,#petals,#trail{position:fixed;inset:0;width:100%;height:100%;pointer-events:none}
+#sky{z-index:0}#petals{z-index:2}#trail{z-index:10}
+.ambient{position:fixed;inset:-20%;z-index:0;pointer-events:none;background:radial-gradient(ellipse at 15% 20%,rgba(131,49,105,.25),transparent 45%),radial-gradient(ellipse at 85% 70%,rgba(158,83,93,.19),transparent 45%);animation:ambient 18s ease-in-out infinite alternate}
+@keyframes ambient{to{transform:translate3d(2%,-2%,0) scale(1.08);filter:hue-rotate(15deg)}}
+main,.toolbar,footer{position:relative;z-index:3}
+.toolbar{position:fixed;top:14px;right:14px;display:flex;gap:8px;z-index:20}
+.tool{border:1px solid #e8ca8b70;background:#24152bd9;color:var(--cream);padding:9px 13px;border-radius:999px;backdrop-filter:blur(12px);cursor:pointer;font-size:.88rem;transition:.25s}
+.tool:hover{transform:translateY(-2px);background:#52304d}
+.hero{min-height:100svh;display:grid;place-items:center;text-align:center;padding:90px 20px 55px;position:relative;isolation:isolate}
+.moon{position:absolute;width:clamp(100px,18vw,190px);aspect-ratio:1;border-radius:50%;top:10%;right:11%;background:radial-gradient(circle at 35% 30%,#fff7d9,#e8ca8b 48%,#b78b68 75%);box-shadow:0 0 35px #e8ca8b50,0 0 100px #e8ca8b24;opacity:.88;animation:moonFloat 8s ease-in-out infinite}
+.moon:after{content:"";position:absolute;width:95%;height:95%;border-radius:50%;background:var(--night);top:-9%;left:-14%;opacity:.82}
+@keyframes moonFloat{50%{transform:translateY(12px);box-shadow:0 0 55px #e8ca8b70,0 0 130px #e8ca8b30}}
+.hero-content{max-width:850px;position:relative}
+.eyebrow{letter-spacing:.13em;color:var(--gold);font-size:.88rem;opacity:0;animation:rise 1s .2s forwards}
+h1{font-family:"Tiro Bangla","Noto Serif Bengali",serif;font-weight:400;font-size:clamp(2.3rem,7.5vw,5.8rem);line-height:1.25;margin:22px 0;color:#fff1d7;text-shadow:0 0 35px #e8a6b733;opacity:0;animation:rise 1.2s .45s forwards}
+.subtitle{font-size:clamp(1rem,2.3vw,1.35rem);color:var(--muted);line-height:2;opacity:0;animation:rise 1s .8s forwards}
+.seal{margin:28px auto 25px;width:84px;height:84px;border:1px solid #e8ca8b99;border-radius:50%;display:grid;place-items:center;color:var(--gold);font-size:2rem;position:relative;animation:sealGlow 3s ease-in-out infinite}
+.seal:before,.seal:after{content:"";position:absolute;inset:-8px;border:1px solid #e8a6b755;border-radius:50%;animation:orbit 12s linear infinite}
+.seal:after{inset:-16px;border-style:dashed;animation-direction:reverse;animation-duration:30s}
+@keyframes sealGlow{50%{box-shadow:0 0 30px #e8a6b733}}
+@keyframes orbit{to{transform:rotate(360deg)}}
+.primary{border:1px solid var(--gold);background:linear-gradient(120deg,#e8ca8b,#f4dfb6);color:#321b2e;border-radius:999px;padding:14px 24px;cursor:pointer;box-shadow:0 8px 30px #0003;transition:transform .3s,box-shadow .3s}
+.primary:hover{transform:translateY(-3px) scale(1.02);box-shadow:0 12px 38px #e8ca8b30}
+.hint{font-size:.8rem;color:#bda4b5;margin-top:14px}
+section{padding:80px 18px}
+.letter-wrap{max-width:900px;margin:auto}
+.section-label{text-align:center;color:var(--gold);letter-spacing:.08em;font-size:.9rem;margin-bottom:15px}
+.letter{position:relative;background:linear-gradient(145deg,rgba(255,246,232,.97),rgba(246,222,213,.96));color:#432b3b;border-radius:8px;padding:clamp(25px,6vw,68px);box-shadow:0 35px 100px #0006;overflow:hidden;transform:translateY(45px);opacity:0;transition:opacity 1s,transform 1s}
+.letter.visible{transform:translateY(0);opacity:1}
+.letter:before{content:"";position:absolute;inset:12px;border:1px solid #b98b7966;pointer-events:none;border-radius:4px}
+.letter:after{content:"✦";position:absolute;right:28px;top:24px;color:#b58b6c;font-size:1.4rem}
+.letter h2{text-align:center;font-family:"Tiro Bangla",serif;font-size:clamp(1.55rem,4vw,2.4rem);font-weight:400;color:#743d58;line-height:1.5;margin:0 0 10px}
+.letter .dedication{text-align:center;color:#94667a;margin:0 0 34px;font-size:.95rem}
+.letter p{font-size:clamp(1rem,2vw,1.13rem);line-height:2.15;margin:0 0 22px;white-space:pre-line}
+.verse{border-left:3px solid #b77c91;padding:12px 18px;margin:28px 0;color:#7d435c;font-style:italic;line-height:2.1;background:#b77c910d;border-radius:0 8px 8px 0}
+.signature{text-align:right;font-family:"Tiro Bangla",serif;font-size:1.2rem;color:#743d58;line-height:2;margin-top:35px}
+.divider{display:flex;align-items:center;gap:16px;justify-content:center;color:var(--gold);margin:36px auto;max-width:500px}
+.divider:before,.divider:after{content:"";height:1px;flex:1;background:linear-gradient(90deg,transparent,#e8ca8b99)}
+.divider:after{transform:rotate(180deg)}
+.memory{max-width:900px;margin:auto;text-align:center}
+.memory h2{font-family:"Tiro Bangla",serif;font-weight:400;font-size:clamp(1.8rem,5vw,3rem);color:#f5d9c8}
+.memory p{max-width:650px;margin:15px auto;color:var(--muted);line-height:2}
+.promise-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:35px auto 0;max-width:850px}
+.promise{padding:22px 15px;border:1px solid #e8ca8b35;background:var(--glass);border-radius:16px;backdrop-filter:blur(8px);transition:transform .4s,border-color .4s}
+.promise:hover{transform:translateY(-8px);border-color:#e8ca8b99}
+.promise .symbol{font-size:1.8rem;margin-bottom:12px}
+.promise h3{font-size:1.05rem;color:var(--gold);font-weight:500;margin:0 0 8px}
+.promise p{font-size:.92rem;line-height:1.9;margin:0;color:#d7c0ce}
+.final-note{max-width:760px;margin:15px auto 0;text-align:center;padding:55px 20px 80px}
+.final-note .big-heart{font-size:3.2rem;display:inline-block;filter:drop-shadow(0 0 18px #e8a6b755);animation:heartbeat 1.8s ease-in-out infinite}
+@keyframes heartbeat{0%,100%{transform:scale(1)}12%{transform:scale(1.14)}24%{transform:scale(1)}36%{transform:scale(1.08)}}
+.final-note h2{font-family:"Tiro Bangla",serif;font-weight:400;font-size:clamp(1.8rem,5vw,3rem);color:#f5d9c8;line-height:1.6}
+.final-note p{color:var(--muted);line-height:2}
+footer{text-align:center;padding:0 20px 35px;color:#9e8298;font-size:.82rem}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .8s,transform .8s}
+.reveal.visible{opacity:1;transform:translateY(0)}
+#toast{position:fixed;bottom:20px;left:50%;transform:translate(-50%,20px);padding:12px 18px;background:#342039;color:#fff1d7;border:1px solid #e8ca8b66;border-radius:999px;opacity:0;transition:.3s;z-index:30;pointer-events:none;font-size:.9rem;white-space:nowrap}
+#toast.show{opacity:1;transform:translate(-50%,0)}
+.spark{position:fixed;z-index:15;pointer-events:none;font-size:18px;animation:sparkFly 1.3s ease-out forwards}
+@keyframes sparkFly{from{opacity:1;transform:translate(0,0) scale(.5) rotate(0)}to{opacity:0;transform:translate(var(--dx),var(--dy)) scale(1.5) rotate(160deg)}}
+@keyframes rise{to{opacity:1;transform:translateY(0)}}
+@media(max-width:650px){.moon{top:9%;right:-20px;opacity:.55}.toolbar{top:9px;right:9px}.tool{padding:8px 10px;font-size:.78rem}.hero{padding-top:110px}.promise-grid{grid-template-columns:1fr}.promise{display:flex;align-items:center;gap:15px;text-align:left;padding:17px}.promise .symbol{margin:0;min-width:34px}.letter{padding:32px 25px}.letter:before{inset:8px}.letter p{line-height:2}.final-note{padding-bottom:55px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}}
+</style>
+</head>
+<body>
+<canvas id="sky" aria-hidden="true"></canvas>
+<canvas id="petals" aria-hidden="true"></canvas>
+<canvas id="trail" aria-hidden="true"></canvas>
+<div class="ambient"></div>
+<div class="toolbar">
+  <button class="tool" id="musicBtn" aria-pressed="false" title="মৃদু সুর চালু/বন্ধ">♫ সুর</button>
+  <button class="tool" id="petalBtn" aria-pressed="true" title="পাপড়ি চালু/বন্ধ">✿ পাপড়ি</button>
+</div>
+<main>
+  <header class="hero">
+    <div class="moon" aria-hidden="true"></div>
+    <div class="hero-content">
+      <div class="eyebrow">একটি পত্র · শুধু তোমার জন্য</div>
+      <div class="seal" aria-hidden="true">♥</div>
+      <h1>হে আমার হৃদয়ের<br>সুলতানা, সাদিয়া!</h1>
+      <p class="subtitle">চাঁদের নীরবতা, গোলাপের সুবাস আর এক হৃদয়ের চিরন্তন নিবেদন।</p>
+      <button class="primary" id="openLetter">💌 হৃদয়ের পত্রটি খোলো</button>
+      <div class="hint">ধীরে স্ক্রল করো—প্রতিটি শব্দে লুকিয়ে আছে একটুখানি ভালোবাসা</div>
+    </div>
+  </header>
+
+  <section id="letterSection">
+    <div class="letter-wrap">
+      <div class="section-label reveal">✦ হৃদয় থেকে হৃদয়ে ✦</div>
+      <article class="letter" id="letter">
+        <h2>আমার হৃদয়ের সুলতানা সাদিয়ার প্রতি</h2>
+        <p class="dedication">দূরত্বের ওপার থেকে এক মুহিব্বীর প্রেমপত্র</p>
+
+        <p>বিসমিল্লাহির রাহমানির রাহিম।
+
+হে আমার হৃদয়ের সুলতানা, আমার রূহের প্রশান্তি, আমার নিশীথের চাঁদ!
+
+সালাম নিও সেই মানুষের কাছ থেকে, যার দিনের ব্যস্ততা পৃথিবীর জন্য, অথচ রাতের নীরবতা কেবল তোমার জন্য।
+
+হে প্রিয়তমা, শাম দেশের আকাশে যখন চাঁদ তার রুপালি আঁচল মেলে, যখন গোলাপের বুকে শিশির নেমে আসে, আর বুলবুলি তার প্রিয় ফুলের বিরহে গান গায়—তখন আমার হৃদয়ও তোমার স্মৃতির দরবারে হাজির হয়।
+
+আমি জানি না, চাঁদ কখনো তারার কাছে চিঠি পাঠায় কি না; জানি না, গোলাপ কখনো বসন্তকে বলে কি না তার ফিরে আসার কথা। শুধু জানি, আমার হৃদয় প্রতিটি নিঃশব্দ প্রহরে তোমার নাম উচ্চারণ করে, যেন তোমার নামই তার সবচেয়ে প্রিয় জিকির, তার সবচেয়ে মধুর কবিতা।</p>
+
+        <div class="verse">চাঁদ জ্বলে আকাশে, গোলাপ ফোটে বনে,<br>আমার সকল বসন্ত, প্রিয়তমা, তোমারই স্মরণে।<br>পৃথিবী ঘুমিয়ে পড়ে রাতের আঁধার ঘিরে,<br>আমার ব্যাকুল হৃদয় জেগে থাকে তোমার পথ চেয়ে।</div>
+
+        <p>হে আমার সাদিয়া, আমার হৃদয়ের সম্রাজ্ঞী!
+
+মানুষ পাথর কেটে প্রাসাদ গড়ে, নদীর বুকে সেতু বাঁধে, মরুভূমির বুকে খুঁজে ফেরে জীবনের পথ। আমিও আমার আগামী দিনের জন্য নকশা আঁকি, অচেনা দিগন্তের দিকে চোখ রাখি, পরিশ্রমের পাথরে পাথরে গড়ে তুলতে চাই আমাদের সুখের আশ্রয়।
+
+কিন্তু হে আমার প্রিয়া, একটি সত্য কোনো হিসাবেই ধরা পড়ে না—তোমাকে ছাড়া সেই আশ্রয় পূর্ণ হবে কী করে?
+
+যে ঘরে তোমার হাসি নেই, সে ঘরের প্রদীপও আমার কাছে ম্লান। যে সাফল্যের সংবাদ তোমার সঙ্গে ভাগ করে নিতে পারি না, সে সাফল্যের আনন্দও যেন অর্ধেক। আর যে সন্ধ্যায় তোমার পাশে বসে দিনের গল্প বলা হয় না, সেই সন্ধ্যা যত সুন্দরই হোক, আমার কাছে তার কিছু অপূর্ণতা থেকে যায়।
+
+হে প্রিয়তমা, আমি দূর দিগন্তে যেতে পারি, নতুন শহরের আলো দেখতে পারি, জীবনের বহু দরজা অতিক্রম করতে পারি; কিন্তু আমার হৃদয়ের কিবলা তো বদলাবে না—তার সমস্ত আকুলতা ফিরে আসবে তোমার কাছেই।</p>
+
+        <div class="verse">দূরের পথ ডাকুক আমায়, ডাকুক অচিন দেশ,<br>তোমার স্মৃতি সঙ্গে নিয়ে পাড়ি দেব প্রতিটি শেষ।<br>হাজার প্রদীপ জ্বলুক পথে, হাজার ফুল ফুটুক,<br>তোমার মুখের একটি হাসি সব আলোকে হার মানাক।</div>
+
+        <p>হে আমার প্রাণের সুলতানা,
+
+বিরহ বড় অদ্ভুত এক কারিগর। সে কখনো চোখে অশ্রু আঁকে, কখনো স্মৃতিকে করে আরও উজ্জ্বল, কখনো একটি সাধারণ কথাকেও অমূল্য রত্ন বানিয়ে দেয়।
+
+তোমার সঙ্গে কাটানো ছোট্ট মুহূর্তগুলো আজ তাই আমার কাছে রাজকোষের মণিমুক্তার চেয়েও দামি। তোমার হাসি, তোমার অভিমান, আমার কোনো কথায় তোমার মৃদু রাগ, আবার একটু পরেই সব ভুলে আপন হয়ে আসা—এসবই তো আমার জীবনের সেই কবিতা, যার পাণ্ডুলিপি আমার হৃদয়ে লেখা।
+
+যদি কোনো দিন আমার ব্যস্ততা তোমার মনে বিষাদের মেঘ জমায়, তবে আমার নীরবতাকে ভালোবাসার অনুপস্থিতি ভেবো না। আমাকে তোমার মনের কথা বলো, তোমার কষ্টের দরজা আমার সামনে খুলে দাও। আমি চাই, তোমার চোখের ভাষা বুঝতে শিখি; তোমার অভিমানকে অবহেলা নয়, মমতা দিয়ে গ্রহণ করি।
+
+কারণ, হে প্রিয়তমা, ভালোবাসা কেবল প্রিয় মুখের প্রশংসা নয়—ভালোবাসা হলো তার অশ্রুর পাশে বসা, তার ক্লান্তির কথা শোনা, তার নীরবতার অর্থ খুঁজতে চাওয়া।</p>
+
+        <div class="verse">তোমার চোখে মেঘ জমিলে আমায় ডেকো কাছে,<br>তোমার মনের ব্যথাগুলো ভাগ কোরো ভালোবাসায়।<br>আমি সব দুঃখ মুছব—এমন অহংকার আমার নেই,<br>তবু তোমার দুঃখের রাতে একা রেখো না আমায়।</div>
+
+        <p>হে আমার সোনালী পরী, আমার ছোট্ট সংসারের রানি!
+
+তোমার কথা ভাবলেই আমার চোখের সামনে ফুটে ওঠে আমাদের ছোট্ট রাজকন্যার মুখ। তার নিষ্পাপ হাসি যেন সকালের প্রথম আলো, তার ছোট্ট হাত যেন জান্নাতের বাগান থেকে আসা কোমল কোনো ফুলের পাপড়ি।
+
+আমি চাই, সে বড় হয়ে এমন একটি ঘরের স্মৃতি বুকে ধারণ করুক, যেখানে তার মা-বাবা পরস্পরের প্রতি শ্রদ্ধাশীল, যেখানে অভিমান ভালোবাসার কাছে ফিরে আসে, যেখানে কঠিন দিনেও কেউ কারও হাত ছেড়ে দেয় না।
+
+আমি চাই, একদিন আমাদের ছোট্ট মেয়েটিকে বুকে নিয়ে তোমার পাশে বসব। তুমি হয়তো তার দুষ্টুমির গল্প করবে, আমি শুনতে শুনতে হেসে উঠব। বাইরে সন্ধ্যার বাতাস বইবে, ঘরের ভেতর থাকবে আমাদের আপনজনের উষ্ণতা।
+
+সেদিন হয়তো পৃথিবীর চোখে আমি কোনো বড় বিজয়ী হব না, আমার নামে কোনো ইতিহাসও লেখা হবে না। তবু আমার অন্তর সাক্ষ্য দেবে—আমি আমার জীবনের সবচেয়ে মূল্যবান ধন লাভ করেছি।
+
+কারণ আমার কাছে সুখ মানে শুধু স্বপ্ন পূরণ নয়; সুখ মানে, সেই স্বপ্নের ভেতর তোমাদের দুজনকে নিরাপদে, আনন্দে, ভালোবাসায় ঘিরে রাখা।</p>
+
+        <div class="verse">একটি ঘর, একটি প্রদীপ, তোমার মধুর হাসি,<br>ছোট্ট মেয়ের কলতানে ভরে উঠুক বাতাসখানি।<br>ধনসম্পদ ক্ষণিকের, জৌলুস মুছে যায়,<br>প্রিয়জনের ভালোবাসা হৃদয়ে অমর হয়ে রয়।</div>
+
+        <p>হে আমার হৃদয়ের সুলতানা সাদিয়া!
+
+ফারসি কবিরা গোলাপের সৌন্দর্য বর্ণনা করেন, বুলবুলির বিরহের গান লেখেন, আর চাঁদের মুখে খুঁজে ফেরেন প্রিয়তমার প্রতিচ্ছবি। অথচ তোমাকে নিয়ে লিখতে বসলে আমার কলমও যেন নিজের ভাষা হারিয়ে ফেলে।
+
+কীভাবে লিখব তোমার মায়ার কথা? কোন উপমায় বোঝাব তোমার উপস্থিতি আমার কাছে কতখানি প্রশান্তি? আকাশের চাঁদ তো রাতের শেষে অস্ত যায়, বসন্তের ফুলও একদিন ঝরে পড়ে; কিন্তু তোমার প্রতি আমার এই মমতা প্রতিদিনের জীবনে নতুন করে জন্ম নিতে চায়।
+
+তোমাকে ভালোবাসি বলেই তোমার কাছে ফিরে আসতে চাই। তোমাকে ভালোবাসি বলেই তোমার হাসির জন্য পরিশ্রম করতে চাই। আর তোমাকে ভালোবাসি বলেই চাই, আমাদের পথচলায় তোমার স্বপ্নগুলোও সমান মর্যাদা পাক।
+
+আমি চাই না, আমার ভবিষ্যতের নকশায় শুধু আমার আকাঙ্ক্ষা লেখা থাকুক। সেখানে থাকুক তোমার ইচ্ছা, তোমার আনন্দ, তোমার নিজস্ব আকাশ। আমরা দুজন পাশাপাশি দাঁড়াব—কেউ কারও ছায়া হয়ে নয়, বরং একে অপরের শক্তি হয়ে।
+
+হে প্রিয়তমা, এ আমার ভালোবাসার অঙ্গীকার—তোমাকে শুধু আমার জীবনে স্থান দেব না, তোমার অনুভূতিকেও আমার জীবনের গুরুত্বপূর্ণ অংশ করে রাখব।</p>
+
+        <div class="verse">তুমি শুধু আমার স্বপ্নের কোনো ছবি নও,<br>তুমি সেই পথের সঙ্গী, যে পথে দুজনে চলব।<br>আমার হাতে তোমার হাত, চোখে আগামী দিনের আলো,<br>আল্লাহর রহমতে আমাদের জীবন হোক সুন্দর ও ভালো।</div>
+
+        <p>হে আমার প্রাণের রানী,
+
+এই পত্রের শেষে এসে তোমার কাছে কোনো রাজকীয় প্রতিশ্রুতি রাখতে চাই না। আমি জানি, মানুষের জীবন পরিবর্তনশীল; প্রতিটি দিন আমাদের ইচ্ছামতো সাজানো যায় না। কিন্তু প্রতিটি দিনের ভেতর ভালোবাসার একটি ছোট্ট কাজ বেছে নেওয়া যায়।
+
+কখনো তোমার কথা মন দিয়ে শোনা, কখনো তোমার ক্লান্তি বুঝে নেওয়া, কখনো ভুল হলে ক্ষমা চাওয়া, কখনো ব্যস্ততার মাঝেও বলা—‘সাদিয়া, তুমি আমার কাছে গুরুত্বপূর্ণ।’
+
+আমার কাছে এই ছোট্ট কথাগুলোই বড় ভালোবাসা। কারণ প্রেম কেবল চাঁদনি রাতে লেখা কবিতা নয়; প্রেম হলো প্রতিদিনের জীবনে সেই কবিতাটিকে সত্য করে তোলা।
+
+তাই মহান আল্লাহর কাছে আমার প্রার্থনা, তিনি যেন আমাদের হৃদয়ে প্রশান্তি দেন, আমাদের রিজিকে বরকত দেন, আমাদের সংসারকে রহমতে পূর্ণ করেন এবং দুনিয়ার এই পথচলার শেষে জান্নাতেও আমাদের একত্রিত করেন।</p>
+
+        <div class="verse">হে আল্লাহ, আমার প্রিয়জনদের রেখো তোমার হেফাজতে,<br>আমাদের ভালোবাসা রেখো কল্যাণের পথে।<br>দুনিয়ার পথ শেষে যদি মেলে জান্নাতের দ্বার,<br>সেখানে যেন আবার পাই আমার সাদিয়ার হাতের অধিকার।</div>
+
+        <p>হে আমার সাদিয়া, আমার হৃদয়ের সম্রাজ্ঞী,
+
+যদি কোনো দিন আমার লেখা এই পত্রটি আবার পড়ো, তবে মনে রেখো—এ কেবল কিছু সুন্দর শব্দের সমষ্টি নয়। এর প্রতিটি পঙ্‌ক্তির আড়ালে আছে তোমার কাছে ফিরে আসার আকুলতা, তোমাদের জন্য একটি সুন্দর আগামী গড়ার স্বপ্ন, আর তোমাকে প্রতিদিন নতুন করে ভালোবাসার ইচ্ছা।
+
+আমি হয়তো যুগের বিখ্যাত কবি নই, আমার কবিতায় রাজদরবারের জৌলুসও নেই। আমি শুধু তোমার সেই মানুষটি, যে পৃথিবীর হাজারো ব্যস্ততার মাঝে তোমার জন্য নিজের হৃদয়ে একটি চিরস্থায়ী আশ্রয় রেখেছে।</p>
+
+        <div class="verse">যত দিন আকাশে চাঁদ, যত দিন গোলাপে ঘ্রাণ,<br>তত দিন তোমার নামে জাগুক আমার প্রেমের গান।<br>জীবনের শেষ বিকেলে, যখন থেমে যাবে পথচলা,<br>তখনো তোমার হাত ধরে বলব—তুমিই আমার ভালোবাসা।</div>
+
+        <div class="signature">ইতি,<br>তোমারই মুহিব্বী,<br>তোমার বিরহে ব্যাকুল, তোমার হাসিতে প্রশান্ত—<br><strong>শুধুই তোমার সাকিব। ❤️</strong></div>
+      </article>
+    </div>
+  </section>
+
+  <div class="divider">✧ ❦ ✧</div>
+
+  <section class="memory">
+    <div class="reveal">
+      <div class="section-label">আমাদের ছোট্ট পৃথিবী</div>
+      <h2>ভালোবাসা শুধু বলা নয়,<br>প্রতিদিন একটু করে গড়ে তোলা।</h2>
+      <p>যে আগামী দিনের স্বপ্ন দেখি, সেখানে থাকবে তোমার হাসি, আমাদের ছোট্ট রাজকন্যার কলতান, আর একে অপরের হাত না ছাড়ার অঙ্গীকার।</p>
+    </div>
+    <div class="promise-grid">
+      <div class="promise reveal"><div class="symbol">🌙</div><div><h3>প্রতিটি রাতের দোয়া</h3><p>দূরত্ব যতই থাকুক, তোমাদের জন্য আমার প্রার্থনা থামবে না।</p></div></div>
+      <div class="promise reveal"><div class="symbol">🌹</div><div><h3>প্রতিদিনের যত্ন</h3><p>তোমার কথা শোনা, অভিমান বোঝা, আর পাশে থাকার চেষ্টা।</p></div></div>
+      <div class="promise reveal"><div class="symbol">🏡</div><div><h3>একসঙ্গে আগামী</h3><p>আমাদের ছোট্ট সংসার—ভরসা, মায়া ও রহমতে গড়া এক আশ্রয়।</p></div></div>
+    </div>
+  </section>
+
+  <section class="final-note reveal">
+    <div class="big-heart">💗</div>
+    <h2>তুমি আমার ঘরে ফেরার ঠিকানা,<br>আমার সবচেয়ে আপন কবিতা।</h2>
+    <p>পৃথিবী যত দূরেই নিয়ে যাক, হৃদয়ের ঠিকানায় তোমার নামই লেখা থাকবে।</p>
+    <button class="primary" id="surpriseBtn">একটি ছোট্ট চমক ✨</button>
+  </section>
+</main>
+<footer>ভালোবাসা দিয়ে লেখা · শুধু সাদিয়ার জন্য ❤️</footer>
+<div id="toast" role="status" aria-live="polite"></div>
+
+<script>
+(() => {
+  'use strict';
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const $ = (selector) => document.querySelector(selector);
+  const sky = $('#sky'), petalsCanvas = $('#petals'), trailCanvas = $('#trail');
+  const skyCtx = sky.getContext('2d'), petalCtx = petalsCanvas.getContext('2d'), trailCtx = trailCanvas.getContext('2d');
+  let width = innerWidth, height = innerHeight, dpr = Math.min(devicePixelRatio || 1, 2);
+  let petalsOn = true, mouse = {x: -100, y: -100}, lastTrail = 0, toastTimer;
+  const rand = (min,max) => Math.random() * (max-min) + min;
+  const stars = [], petals = [], trail = [];
+  const starCount = Math.min(150, Math.floor((width*height)/8500));
+  function resizeCanvas(canvas, ctx) {
+    canvas.width = Math.floor(width*dpr); canvas.height = Math.floor(height*dpr);
+    canvas.style.width = width+'px'; canvas.style.height = height+'px';
+    ctx.setTransform(dpr,0,0,dpr,0,0);
+  }
+  function resize() {
+    width = innerWidth; height = innerHeight; dpr = Math.min(devicePixelRatio || 1, 2);
+    [ [sky,skyCtx], [petalsCanvas,petalCtx], [trailCanvas,trailCtx] ].forEach(([c,ctx]) => resizeCanvas(c,ctx));
+    stars.length = 0;
+    for(let i=0;i<Math.min(180,Math.floor(width*height/6500));i++) stars.push({x:rand(0,width),y:rand(0,height),r:rand(.35,1.6),a:rand(.2,.9),phase:rand(0,Math.PI*2),speed:rand(.004,.018)});
+    petals.length=0;
+    for(let i=0;i<(reducedMotion?8:36);i++) petals.push(newPetal(true));
+  }
+  function newPetal(initial=false) {
+    return {x:rand(-20,width+20),y:initial?rand(-height,height):rand(-80,-15),size:rand(5,12),speed:rand(.35,1.25),drift:rand(.35,1.4),angle:rand(0,Math.PI*2),spin:rand(-.025,.025),hue:Math.random()>.22?rand(330,355):rand(38,48),alpha:rand(.35,.8),sway:rand(0,Math.PI*2)};
+  }
+  let tick=0;
+  function drawSky() {
+    skyCtx.clearRect(0,0,width,height); tick++;
+    for(const s of stars){
+      const alpha=s.a*(.65+.35*Math.sin(tick*s.speed+s.phase));
+      skyCtx.beginPath();skyCtx.arc(s.x,s.y,s.r,0,Math.PI*2);
+      skyCtx.fillStyle=`rgba(255,231,194,${alpha})`;skyCtx.fill();
+      if(s.r>1.3){skyCtx.strokeStyle=`rgba(255,231,194,${alpha*.3})`;skyCtx.beginPath();skyCtx.moveTo(s.x-4,s.y);skyCtx.lineTo(s.x+4,s.y);skyCtx.moveTo(s.x,s.y-4);skyCtx.lineTo(s.x,s.y+4);skyCtx.stroke();}
+    }
+    requestAnimationFrame(drawSky);
+  }
+  function drawPetals() {
+    petalCtx.clearRect(0,0,width,height);
+    if(petalsOn){
+      for(const p of petals){
+        p.y+=p.speed;p.x+=Math.sin(p.sway+tick*.008)*p.drift*.45;p.angle+=p.spin;
+        petalCtx.save();petalCtx.translate(p.x,p.y);petalCtx.rotate(p.angle);
+        petalCtx.beginPath();petalCtx.ellipse(0,0,p.size*.48,p.size,0,0,Math.PI*2);
+        petalCtx.fillStyle=`hsla(${p.hue},58%,78%,${p.alpha})`;petalCtx.fill();petalCtx.restore();
+        if(p.y>height+25){Object.assign(p,newPetal());}
+      }
+    }
+    requestAnimationFrame(drawPetals);
+  }
+  function drawTrail() {
+    trailCtx.clearRect(0,0,width,height);
+    for(let i=trail.length-1;i>=0;i--){
+      const t=trail[i];t.life-=1;
+      if(t.life<=0){trail.splice(i,1);continue;}
+      trailCtx.globalAlpha=Math.max(0,t.life/38);
+      trailCtx.font=`${10+t.life*.18}px serif`;trailCtx.fillText(t.symbol,t.x,t.y);
+      t.y-=.45;t.x+=Math.sin(t.life*.15)*.35;
+    }
+    trailCtx.globalAlpha=1;requestAnimationFrame(drawTrail);
+  }
+  resize();drawSky();drawPetals();drawTrail();
+  addEventListener('resize',resize,{passive:true});
+  addEventListener('pointermove',e=>{
+    mouse.x=e.clientX;mouse.y=e.clientY;
+    if(!reducedMotion && performance.now()-lastTrail>90 && Math.random()>.48){
+      trail.push({x:e.clientX,y:e.clientY,life:38,symbol:Math.random()>.5?'✦':'♡'});lastTrail=performance.now();
+      if(trail.length>24)trail.shift();
+    }
+  },{passive:true});
+
+  // Scroll reveal: elements softly rise into view.
+  const observer = new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target);}});
+  },{threshold:.12});
+  document.querySelectorAll('.reveal,.letter').forEach(el=>observer.observe(el));
+
+  function toast(message){
+    const el=$('#toast');el.textContent=message;el.classList.add('show');
+    clearTimeout(toastTimer);toastTimer=setTimeout(()=>el.classList.remove('show'),2600);
+  }
+  function burst(x=width/2,y=height/2,count=28){
+    const symbols=['❤','♡','✦','🌹','✨'];
+    for(let i=0;i<count;i++){
+      const el=document.createElement('span');el.className='spark';el.textContent=symbols[Math.floor(Math.random()*symbols.length)];
+      el.style.left=x+'px';el.style.top=y+'px';el.style.setProperty('--dx',rand(-150,150)+'px');el.style.setProperty('--dy',rand(-210,80)+'px');
+      el.style.animationDuration=rand(.8,1.8)+'s';document.body.appendChild(el);setTimeout(()=>el.remove(),1900);
+    }
+  }
+  $('#openLetter').addEventListener('click',e=>{
+    $('#letter').classList.add('visible');$('#letterSection').scrollIntoView({behavior:reducedMotion?'auto':'smooth'});
+    burst(e.clientX||width/2,e.clientY||height/2,32);
+    toast('এই পত্রের প্রতিটি শব্দ শুধু তোমার জন্য, সাদিয়া ❤️');
+  });
+  $('#petalBtn').addEventListener('click',()=>{
+    petalsOn=!petalsOn;$('#petalBtn').setAttribute('aria-pressed',String(petalsOn));
+    $('#petalBtn').textContent=petalsOn?'✿ পাপড়ি':'✿ পাপড়ি বন্ধ';
+    toast(petalsOn?'গোলাপের পাপড়ি আবার ঝরছে 🌹':'পাপড়ির অ্যানিমেশন বন্ধ করা হয়েছে');
+  });
+  $('#surpriseBtn').addEventListener('click',e=>{
+    burst(e.clientX||width/2,e.clientY||height/2,65);
+    toast('সাদিয়া, তুমি আমার ঘরে ফেরার ঠিকানা। তোমাকে ভালোবাসি। ❤️');
+    $('#surpriseBtn').textContent='তোমাকে অনেক ভালোবাসি ❤️';
+  });
+
+  // A gentle original chime generated locally with Web Audio; no audio file required.
+  let audioCtx=null, master=null, musicTimer=null, musicPlaying=false, noteIndex=0;
+  const melody=[523.25,659.25,783.99,659.25,587.33,698.46,783.99,698.46,523.25,587.33,659.25,523.25];
+  function playNote(freq,when,duration=.8){
+    if(!audioCtx||!master)return;
+    const osc=audioCtx.createOscillator(),gain=audioCtx.createGain();
+    osc.type='sine';osc.frequency.setValueAtTime(freq,when);
+    gain.gain.setValueAtTime(.0001,when);gain.gain.exponentialRampToValueAtTime(.055,when+.08);gain.gain.exponentialRampToValueAtTime(.0001,when+duration);
+    osc.connect(gain);gain.connect(master);osc.start(when);osc.stop(when+duration+.03);
+  }
+  function melodyStep(){
+    if(!musicPlaying||!audioCtx)return;
+    const now=audioCtx.currentTime;
+    playNote(melody[noteIndex%melody.length],now,.9);
+    if(noteIndex%3===0)playNote(melody[(noteIndex+3)%melody.length]/2,now+.03,1.2);
+    noteIndex++;musicTimer=setTimeout(melodyStep,760);
+  }
+  $('#musicBtn').addEventListener('click',async()=>{
+    if(!audioCtx){const AC=window.AudioContext||window.webkitAudioContext;if(!AC){toast('এই ব্রাউজারে অডিও সাপোর্ট নেই');return;}audioCtx=new AC();master=audioCtx.createGain();master.gain.value=.55;master.connect(audioCtx.destination);}
+    if(audioCtx.state==='suspended')await audioCtx.resume();
+    musicPlaying=!musicPlaying;$('#musicBtn').setAttribute('aria-pressed',String(musicPlaying));
+    $('#musicBtn').textContent=musicPlaying?'♫ সুর বন্ধ':'♫ সুর';
+    if(musicPlaying){melodyStep();toast('একটি মৃদু সুর শুধু তোমার জন্য 🎶');}
+    else{clearTimeout(musicTimer);master.gain.cancelScheduledValues(audioCtx.currentTime);master.gain.setTargetAtTime(.0001,audioCtx.currentTime,.08);setTimeout(()=>{if(!musicPlaying&&master)master.gain.setTargetAtTime(.55,audioCtx.currentTime,.1)},300);}
+  });
+
+  // Keyboard shortcut: press L to open the letter; ignore while typing in a control.
+  addEventListener('keydown',e=>{
+    if(e.key.toLowerCase()==='l' && !['INPUT','TEXTAREA'].includes(document.activeElement.tagName))$('#openLetter').click();
+    if(e.key==='Escape'){trail.length=0;}
+  });
+})();
+</script>
+</body>
+</html>
